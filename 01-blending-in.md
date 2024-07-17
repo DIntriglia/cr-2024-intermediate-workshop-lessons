@@ -6,30 +6,29 @@ Let's make our app feel more cohesive with the operating system by respecting th
 
 ### Concepts
 
--   Using font scaling wherever we can without breaking the UI and selectively turning it off for text where it doesn't make sense.
--   Refactoring a component library to implement a separate dark mode theme.
+- Using font scaling wherever we can without breaking the UI and selectively turning it off for text where it doesn't make sense.
+- Refactoring a component library to implement a separate dark mode theme.
 
 ### Features to build
 
--   Support for font scaling
--   Add haptics give our app a more tactile feel
--   Switch to dark mode based on the user's operating system settings
-    -   Also allow overriding of the OS theme setting for the app
+- Support for font scaling
+- Add haptics give our app a more tactile feel
+- Switch to dark mode based on the user's operating system settings
+  - Also allow overriding of the OS theme setting for the app
 
 ### Resources
 
--   React Native docs
-    -   [allowFontScaling](https://reactnative.dev/docs/text#allowfontscaling)
-    -   [maxFontSizeMultiplier](https://reactnative.dev/docs/text#maxfontsizemultiplier)
-    -   [useWindowDimensions().fontScale](https://reactnative.dev/docs/usewindowdimensions#fontscale)
--   [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
--   [Kadi Kraman's video on _Enhancing your React Native App with Haptics, Sounds and Micro-Animations_](https://www.youtube.com/watch?v=hDGASxkKEXE)
--   [Mark Rickert's PR to Ignite for Theming and Documentation](https://github.com/infinitered/ignite/pull/2636)
+- React Native docs
+  - [allowFontScaling](https://reactnative.dev/docs/text#allowfontscaling)
+  - [maxFontSizeMultiplier](https://reactnative.dev/docs/text#maxfontsizemultiplier)
+  - [useWindowDimensions().fontScale](https://reactnative.dev/docs/usewindowdimensions#fontscale)
+- [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/)
+- [Kadi Kraman's video on _Enhancing your React Native App with Haptics, Sounds and Micro-Animations_](https://www.youtube.com/watch?v=hDGASxkKEXE)
+- [Mark Rickert's PR to Ignite for Theming and Documentation](https://github.com/infinitered/ignite/pull/2636)
 
 # Exercises
 
 ## Exercise -1: Build the app (if you haven't already)
-
 1. `yarn`
 2. `npx expo run:ios` or `npx expo run:android`
 
@@ -123,54 +122,54 @@ Create `src/theme/colorsDark.ts` with the following values (or come up with your
 
 ```tsx
 const palette = {
-	neutral900: "#FFFFFF",
-	neutral800: "#F4F2F1",
-	neutral700: "#D7CEC9",
-	neutral600: "#B6ACA6",
-	neutral500: "#978F8A",
-	neutral400: "#564E4A",
-	neutral300: "#3C3836",
-	neutral200: "#191015",
-	neutral100: "#000000",
+  neutral900: "#FFFFFF",
+  neutral800: "#F4F2F1",
+  neutral700: "#D7CEC9",
+  neutral600: "#B6ACA6",
+  neutral500: "#978F8A",
+  neutral400: "#564E4A",
+  neutral300: "#3C3836",
+  neutral200: "#191015",
+  neutral100: "#000000",
 
-	primary600: "#F4E0D9",
-	primary500: "#E8C1B4",
-	primary400: "#DDA28E",
-	primary300: "#D28468",
-	primary200: "#C76542",
-	primary100: "#A54F31",
+  primary600: "#F4E0D9",
+  primary500: "#E8C1B4",
+  primary400: "#DDA28E",
+  primary300: "#D28468",
+  primary200: "#C76542",
+  primary100: "#A54F31",
 
-	secondary500: "#DCDDE9",
-	secondary400: "#BCC0D6",
-	secondary300: "#9196B9",
-	secondary200: "#626894",
-	secondary100: "#41476E",
+  secondary500: "#DCDDE9",
+  secondary400: "#BCC0D6",
+  secondary300: "#9196B9",
+  secondary200: "#626894",
+  secondary100: "#41476E",
 
-	accent500: "#FFEED4",
-	accent400: "#FFE1B2",
-	accent300: "#FDD495",
-	accent200: "#FBC878",
-	accent100: "#FFBB50",
+  accent500: "#FFEED4",
+  accent400: "#FFE1B2",
+  accent300: "#FDD495",
+  accent200: "#FBC878",
+  accent100: "#FFBB50",
 
-	angry100: "#F2D6CD",
-	angry500: "#C03403",
+  angry100: "#F2D6CD",
+  angry500: "#C03403",
 
-	overlay20: "rgba(25, 16, 21, 0.2)",
-	overlay50: "rgba(25, 16, 21, 0.5)",
+  overlay20: "rgba(25, 16, 21, 0.2)",
+  overlay50: "rgba(25, 16, 21, 0.5)",
 } as const;
 
 export const colors = {
-	palette,
-	transparent: "rgba(0, 0, 0, 0)",
-	text: palette.neutral800,
-	textDim: palette.neutral600,
-	background: palette.neutral200,
-	border: palette.neutral400,
-	tint: palette.primary500,
-	tintInactive: palette.neutral300,
-	separator: palette.neutral300,
-	error: palette.angry500,
-	errorBackground: palette.angry100,
+  palette,
+  transparent: "rgba(0, 0, 0, 0)",
+  text: palette.neutral800,
+  textDim: palette.neutral600,
+  background: palette.neutral200,
+  border: palette.neutral400,
+  tint: palette.primary500,
+  tintInactive: palette.neutral300,
+  separator: palette.neutral300,
+  error: palette.angry500,
+  errorBackground: palette.angry100,
 } as const;
 ```
 
@@ -183,15 +182,15 @@ Create `src/theme/spacingDark.ts` with the following values (again, feel free to
   Use these spacings for margins/paddings and other whitespace throughout your app.
  */
 export const spacing = {
-	xxxs: 2,
-	xxs: 4,
-	xs: 8,
-	sm: 12,
-	md: 16,
-	lg: 24,
-	xl: 32,
-	xxl: 48,
-	xxxl: 64,
+  xxxs: 2,
+  xxs: 4,
+  xs: 8,
+  sm: 12,
+  md: 16,
+  lg: 24,
+  xl: 32,
+  xxl: 48,
+  xxxl: 64,
 } as const;
 
 export type Spacing = keyof typeof spacing;
@@ -233,24 +232,24 @@ Here we have the idea of `ThemeContexts`, which in this case will be `light` or 
 ```tsx
 // The overall Theme object should contain all of the data you need to style your app.
 export interface Theme {
-	colors: Colors;
-	spacing: Spacing;
-	typography: Typography;
-	timing: Timing;
+  colors: Colors;
+  spacing: Spacing;
+  typography: Typography;
+  timing: Timing;
 }
 
 // Here we define our themes.
 export const lightTheme: Theme = {
-	colors: colorsLight,
-	spacing: spacingLight,
-	typography,
-	timing,
+  colors: colorsLight,
+  spacing: spacingLight,
+  typography,
+  timing,
 };
 export const darkTheme: Theme = {
-	colors: colorsDark,
-	spacing: spacingDark,
-	typography,
-	timing,
+  colors: colorsDark,
+  spacing: spacingDark,
+  typography,
+  timing,
 };
 ```
 
@@ -278,9 +277,9 @@ export const darkTheme: Theme = {
  */
 export type ThemedStyle<T> = (theme: Theme) => T;
 export type ThemedStyleArray<T> = (
-	| ThemedStyle<T>
-	| StyleProp<T>
-	| (StyleProp<T> | ThemedStyle<T>)[]
+  | ThemedStyle<T>
+  | StyleProp<T>
+  | (StyleProp<T> | ThemedStyle<T>)[]
 )[];
 ```
 
@@ -289,11 +288,11 @@ export type ThemedStyleArray<T> = (
 ```tsx
 // Export the two Theme objects:
 export {
-	colorsLight as colors,
-	colorsDark,
-	spacingLight as spacing,
-	spacingDark,
-	typography,
+  colorsLight as colors,
+  colorsDark,
+  spacingLight as spacing,
+  spacingDark,
+  typography,
 };
 
 export { customFontsToLoad } from "./typography";
@@ -313,38 +312,38 @@ Next we'll create the context provider which will give the application access to
 
 ```tsx
 import {
-	createContext,
-	useCallback,
-	useContext,
-	useMemo,
-	useState,
+  createContext,
+  useCallback,
+  useContext,
+  useMemo,
+  useState,
 } from "react";
 import { Alert, StyleProp, useColorScheme } from "react-native";
 import {
-	DarkTheme,
-	DefaultTheme,
-	useTheme as useNavTheme,
+  DarkTheme,
+  DefaultTheme,
+  useTheme as useNavTheme,
 } from "@react-navigation/native";
 import {
-	type Theme,
-	type ThemeContexts,
-	type ThemedStyle,
-	type ThemedStyleArray,
-	lightTheme,
-	darkTheme,
+  type Theme,
+  type ThemeContexts,
+  type ThemedStyle,
+  type ThemedStyleArray,
+  lightTheme,
+  darkTheme,
 } from "src/theme";
 
 type ThemeContextType = {
-	themeScheme: ThemeContexts;
-	setThemeContextOverride: (newTheme: ThemeContexts) => void;
+  themeScheme: ThemeContexts;
+  setThemeContextOverride: (newTheme: ThemeContexts) => void;
 };
 
 // create a React context and provider for the current theme
 export const ThemeContext = createContext<ThemeContextType>({
-	themeScheme: undefined, // default to the system theme
-	setThemeContextOverride: (_newTheme: ThemeContexts) => {
-		Alert.alert("setThemeContextOverride not implemented");
-	},
+  themeScheme: undefined, // default to the system theme
+  setThemeContextOverride: (_newTheme: ThemeContexts) => {
+    Alert.alert("setThemeContextOverride not implemented");
+  },
 });
 ```
 
@@ -356,22 +355,22 @@ It will return the Context Provider, the setter function and the current theme v
 
 ```tsx
 export const useThemeProvider = (initialTheme: ThemeContexts = undefined) => {
-	const colorScheme = useColorScheme();
-	const [overrideTheme, setTheme] = useState<ThemeContexts>(initialTheme);
+  const colorScheme = useColorScheme();
+  const [overrideTheme, setTheme] = useState<ThemeContexts>(initialTheme);
 
-	const setThemeContextOverride = useCallback((newTheme: ThemeContexts) => {
-		setTheme(newTheme);
-	}, []);
+  const setThemeContextOverride = useCallback((newTheme: ThemeContexts) => {
+    setTheme(newTheme);
+  }, []);
 
-	const themeScheme = overrideTheme || colorScheme || "light";
-	const navigationTheme = themeScheme === "dark" ? DarkTheme : DefaultTheme;
+  const themeScheme = overrideTheme || colorScheme || "light";
+  const navigationTheme = themeScheme === "dark" ? DarkTheme : DefaultTheme;
 
-	return {
-		themeScheme,
-		navigationTheme,
-		setThemeContextOverride,
-		ThemeProvider: ThemeContext.Provider,
-	};
+  return {
+    themeScheme,
+    navigationTheme,
+    setThemeContextOverride,
+    ThemeProvider: ThemeContext.Provider,
+  };
 };
 ```
 
@@ -385,18 +384,18 @@ In the same file, `src/utils/useAppTheme.ts`, add the hook.
 
 ```tsx
 interface UseAppThemeValue {
-	// The theme object from react-navigation
-	navTheme: typeof DefaultTheme;
-	// A function to set the theme context override (for switching modes)
-	setThemeContextOverride: (newTheme: ThemeContexts) => void;
-	// The current theme object
-	theme: Theme;
-	// The current theme context "light" | "dark"
-	themeContext: ThemeContexts;
-	// A function to apply the theme to a style object.
-	themed: <T>(
-		styleOrStyleFn: ThemedStyle<T> | StyleProp<T> | ThemedStyleArray<T>
-	) => T;
+  // The theme object from react-navigation
+  navTheme: typeof DefaultTheme;
+  // A function to set the theme context override (for switching modes)
+  setThemeContextOverride: (newTheme: ThemeContexts) => void;
+  // The current theme object
+  theme: Theme;
+  // The current theme context "light" | "dark"
+  themeContext: ThemeContexts;
+  // A function to apply the theme to a style object.
+  themed: <T>(
+    styleOrStyleFn: ThemedStyle<T> | StyleProp<T> | ThemedStyleArray<T>
+  ) => T;
 }
 ```
 
@@ -412,53 +411,53 @@ Two of the more important properties returned here are the `theme` and the callb
  * @throws {Error} If used outside of a ThemeProvider.
  */
 export const useAppTheme = (): UseAppThemeValue => {
-	const navTheme = useNavTheme();
-	const context = useContext(ThemeContext);
-	if (!context) {
-		throw new Error("useTheme must be used within a ThemeProvider");
-	}
+  const navTheme = useNavTheme();
+  const context = useContext(ThemeContext);
+  if (!context) {
+    throw new Error("useTheme must be used within a ThemeProvider");
+  }
 
-	const { themeScheme: overrideTheme, setThemeContextOverride } = context;
+  const { themeScheme: overrideTheme, setThemeContextOverride } = context;
 
-	const themeContext: ThemeContexts = useMemo(
-		() => overrideTheme || (navTheme.dark ? "dark" : "light"),
-		[overrideTheme, navTheme]
-	);
+  const themeContext: ThemeContexts = useMemo(
+    () => overrideTheme || (navTheme.dark ? "dark" : "light"),
+    [overrideTheme, navTheme]
+  );
 
-	const themeVariant: Theme = useMemo(
-		() => (themeContext === "dark" ? darkTheme : lightTheme),
-		[themeContext]
-	);
+  const themeVariant: Theme = useMemo(
+    () => (themeContext === "dark" ? darkTheme : lightTheme),
+    [themeContext]
+  );
 
-	const themed = useCallback(
-		<T,>(
-			styleOrStyleFn: ThemedStyle<T> | StyleProp<T> | ThemedStyleArray<T>
-		) => {
-			const flatStyles = [styleOrStyleFn].flat(3) as (
-				| ThemedStyle<T>
-				| StyleProp<T>
-			)[];
-			const stylesArray = flatStyles.map((f) => {
-				if (typeof f === "function") {
-					return (f as ThemedStyle<T>)(themeVariant);
-				} else {
-					return f;
-				}
-			});
+  const themed = useCallback(
+    <T,>(
+      styleOrStyleFn: ThemedStyle<T> | StyleProp<T> | ThemedStyleArray<T>
+    ) => {
+      const flatStyles = [styleOrStyleFn].flat(3) as (
+        | ThemedStyle<T>
+        | StyleProp<T>
+      )[];
+      const stylesArray = flatStyles.map((f) => {
+        if (typeof f === "function") {
+          return (f as ThemedStyle<T>)(themeVariant);
+        } else {
+          return f;
+        }
+      });
 
-			// Flatten the array of styles into a single object
-			return Object.assign({}, ...stylesArray) as T;
-		},
-		[themeVariant]
-	);
+      // Flatten the array of styles into a single object
+      return Object.assign({}, ...stylesArray) as T;
+    },
+    [themeVariant]
+  );
 
-	return {
-		navTheme,
-		setThemeContextOverride,
-		theme: themeVariant,
-		themeContext,
-		themed,
-	};
+  return {
+    navTheme,
+    setThemeContextOverride,
+    theme: themeVariant,
+    themeContext,
+    themed,
+  };
 };
 ```
 
@@ -524,8 +523,8 @@ export default observer(function ProfileScreen() {
 
 ```tsx
 const toggleTheme = React.useCallback(() => {
-	LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); // Animate the transition
-	setThemeContextOverride(themeContext === "dark" ? "light" : "dark");
+  LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut); // Animate the transition
+  setThemeContextOverride(themeContext === "dark" ? "light" : "dark");
 }, [themeContext, setThemeContextOverride]);
 ```
 
@@ -2909,10 +2908,10 @@ Congrats! ✨ You've made it (for this screen, with this set of components, at l
 
 ## Side Quests
 
--   [Bzzzt! Adding haptics](./companions/01/expo-haptics.md)
--   Update the rest of the `src/components` for theming
--   Support dark mode for any of the other screens
--   Create a third theme with your own color palette
+- [Bzzzt! Adding haptics](./companions/01/expo-haptics.md)
+- Update the rest of the `src/components` for theming
+- Support dark mode for any of the other screens
+- Create a third theme with your own color palette
 
 ## See the solution
 
